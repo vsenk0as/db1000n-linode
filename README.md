@@ -18,12 +18,9 @@ https://www.linode.com/docs/guides/linode-cli/
 ./init.sh 10 
 ```
 
-де `10` це число linodes які будуть створені. Ліміт в аккаунті по замовчаванню - 10 
+де `10` це число linodes які будуть створені. Ліміт в аккаунті за замовчуванням - 10 linodes.
 
-Скрипт запускає інстанс, на якому запускається докер імедж через команду screen для ручного моніторингу скриптів.
-
-Більше про screen:
-https://www.tecmint.com/screen-command-examples-to-manage-linux-terminals/
+Скрипт запускає інстанс, на якому запускається докер контейнер з образом `db1000n` (https://github.com/Arriven/db1000n).
 
 Щоб видалити створені інстанси:
 
@@ -33,7 +30,7 @@ https://www.tecmint.com/screen-command-examples-to-manage-linux-terminals/
 
 ### Як це працює
 
-Скрипт ініціалізації створює інстансу у випадковому активному регіоні і налаштовує на ній все для бомбардування. Інстанс запускається з паролем, який ми передаємо через env файл, також використовується найдешевший тип інстансів за 5 баксів на місяць.
+Скрипт ініціалізації створює інстансу у випадковому активному регіоні і налаштовує на ній все для запуску https://github.com/Arriven/db1000n. Інстанс запускається з паролем, який ми передаємо через env файл, також використовується найдешевший тип інстансів за 5 баксів на місяць.
 
 ### Доповнюємо разом
 
@@ -60,9 +57,7 @@ After that run initialization script:
 
 where `10` is a number of linodes to be created.
 
-The script launches an instance that runs the docker image via the screen command to manually monitor the scripts.
-More about screen:
-https://www.tecmint.com/screen-command-examples-to-manage-linux-terminals/
+The script launches an instance that runs the docker image from image https://github.com/Arriven/db1000n.
 
 To remove created instances run:
 
@@ -72,7 +67,7 @@ To remove created instances run:
 
 ### How it works
 
-Script creates linodes in random active region and setup everything for bombardier.
+Script creates linodes in random active region and setup everything for run `db1000n`.
 
 Instance is running with existing password from env file, also cheapest linode is used (5 usd month)
 
